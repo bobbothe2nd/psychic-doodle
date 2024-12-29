@@ -1,0 +1,216 @@
+/* Default values for easy customization */
+:root {
+    --color-bg: #0d0d0d; /* Deep, luxurious black background */
+    --color-text-main: #f7f7f7; /* Soft white for better contrast */
+    --color-text-header: #ffffff; /* Crisp white for headings */
+    --color-primary: #00bcd4; /* Electric cyan for a futuristic vibe */
+    --color-secondary: #ff4081; /* Pink accent for vibrancy */
+    --color-link: #00bcd4; /* Link color matching the primary accent */
+    --color-link-hover: #ff4081; /* Pink hover effect */
+    --wrapper-height: 90vh; /* Larger height for better centering */
+    --image-max-width: 450px; /* Increased max-width for a sleeker look */
+    --font-family: "Inter", sans-serif; /* Modern sans-serif with excellent readability */
+    --font-family-header: "Roboto Slab", serif; /* A more premium, stylish font for headers */
+    --content-shadow: rgba(0, 0, 0, 0.3); /* Deep shadows for contrast */
+    --gradient-bg: linear-gradient(145deg, #111, #333); /* Subtle background gradient */
+  }
+  
+  /* Base Styling */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-main);
+    transition: all 0.3s ease-in-out;
+    line-height: 1.6;
+    background: var(--gradient-bg); /* Smooth gradient background */
+  }
+  
+  /* Page structure */
+  .wrapper {
+    min-height: var(--wrapper-height);
+    display: grid;
+    place-items: center;
+    margin: 2rem auto;
+    padding: 3rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Slightly opaque overlay */
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft glow shadow */
+  }
+  
+  /* Content styling */
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Title and Subtitle */
+  .title {
+    font-family: var(--font-family-header);
+    font-weight: bold;
+    font-size: 96px; /* Larger and more prominent */
+    margin: 0;
+    color: var(--color-text-header);
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Adds a bold, modern aesthetic */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Soft shadow for text depth */
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--color-primary);
+    font-weight: bold;
+    color: var(--color-primary); /* Primary color for emphasis */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    width: 100%
+  }
+  
+  /* Description Styling */
+  .description {
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Links Styling */
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: var(--color-link-hover); /* Hover to a complementary color */
+    transform: translateY(-4px); /* Lift effect on hover */
+    text-decoration: underline;
+  }
+  
+  a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Smooth animation for elements */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Styling for images */
+  img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 25px; /* More pronounced rounded corners */
+    margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.05); /* Smooth zoom effect */
+  }
+  
+  /* Enhanced flex container for pretzel and lemon sections */
+  .pretzel, .lemon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6); /* Background for sections */
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Shadow for sections */
+    transition: transform 0.3s ease;
+  }
+  
+  .pretzel:hover, .lemon:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+  }
+  
+  /* Footer positioning and style */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #2f6bc4, #00bcd4); /* Gradient background */
+    color: var(--color-text-main);
+    padding: 15px 30px; /* Increased padding for a better feel */
+    text-align: center;
+    font-size: 1.2rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    height: 20px;
+  }
+  
+  /* Hide footer when clicked */
+  footer.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%); /* Slide footer down when hidden */
+  }
+  
+  /* Close button inside footer */
+  footer button {
+    position: absolute;
+    right: 20px;
+    background: transparent;
+    color: var(--color-text-main);
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 101;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  footer button:hover {
+    color: #ffcc00; /* Gold color on hover */
+    transform: scale(1.2); /* Slightly enlarge button */
+  }
+  
+  
+  /* Responsive Adjustments */
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 72px;
+    }
+  
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  
+    img {
+      width: 80%;
+      height: auto;
+    }
+  
+    footer {
+      font-size: 1.1rem;
+    }
+  }
+  
